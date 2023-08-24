@@ -1,0 +1,48 @@
+bady{
+   background-color:  #ffffff;
+   box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto 20px;
+}
+.register{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+#logo{
+    color: red;
+    font-size: 29px;
+    
+}
+.navbar{
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.form{
+    width: 150%;
+    padding-left:  30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    border: 1px solid #ffffff ;
+    background-color: antiquewhite;
+    margin-right: 50px;
+}
+.search-bar .fa-solid{
+    position: absolute;
+    margin: 10px;
+
+}
+.search-bar{
+    margin-right: 155px;
+}
+
+.register1{
+    margin: 10px;
+}
