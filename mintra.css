@@ -1,6 +1,7 @@
 bady{
    background-color:  #ffffff;
    box-sizing: border-box;
+   
 }
 
 nav{
@@ -8,6 +9,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     margin: auto 20px;
+    border-bottom: 3px solid #f5f5f6;
 }
 .register{
     display: flex;
@@ -31,7 +33,7 @@ nav{
     padding-bottom: 5px;
     font-size: 18px;
     border: 1px solid #ffffff ;
-    background-color: antiquewhite;
+    background-color: #f5f5f6;
     margin-right: 50px;
 }
 .search-bar .fa-solid{
