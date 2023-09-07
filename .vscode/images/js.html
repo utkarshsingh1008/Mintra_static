@@ -1,0 +1,64 @@
+<script>
+    function add(a, b){
+        console.log(a, b);
+      var input = a+b;
+  return input;
+    }
+    // block scope 
+    {
+      let a = 10
+      console.log(a);
+    }
+    //function scope
+    {
+      var a =30
+      
+    }
+    console.log(a)
+    {
+      let a = 10;
+      {
+        console.log(a);
+        let b =100;
+      }
+      console.log(b)
+    }
+    // js default parameter
+    // function print(arg){
+    //   console.log(arg);
+    // }
+    // print(); //Undefine
+
+    function print(arg = "hello"){
+      console.log(arg)
+    }
+    print();
+
+    // undefine = not tacking memory
+    // none = takes memory
+
+
+    // Anonimus function it is like foreach Method()
+   ( function(){
+
+}) ()
+    // named function
+    function print(){
+
+    }
+    // higher order function
+function sum(a, b){
+  return a+b;
+}
+function multiply(a, b){
+  return a*b;
+}
+function calculate(logic, a, b){
+  return logic(a, b);
+}
+ calculate(sum , 2, 3)
+ calculate(multiply, 2, 3) 
+    //higher order function 
+// dom manipulation 
+document.getElementById("Utkarsh")
+</script>
