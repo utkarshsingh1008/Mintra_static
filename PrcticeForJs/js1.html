@@ -1,19 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <header>My Todo list</header>
+        <form>
+            <div>
+                <input type="text" class="todo-input">
+                <button onclick="addTask()" type="submit" class="todo-button">ADD</button>
+            </div>
+        </form>
+    
+        <div class="todo-container">
+            <ul class="todo-list">
+                
+            </ul>
+        </div>
+</body>
+</html>
+
+
 <script>
       
-    function add(a, b){
-        var input = a+b;
-        result(input);
-    }
-    function result(res){
-        console.log(res);
-    }
-   add(3, 4);
+      function addTask(event) {
+    event.preventDefault();
+    const inputNode = document.getElementsByClassName("todo-input")[0];
+    
+    const task = inputNode.value;
 
-   if('ram'){
-    alert('string')
-   }
-   if('72'){
-    alert('number')
-   }
+    const divNode = document.createElement("div");
+    const listNode = document.createElement("li");
+    listNode.innerText = task;
+    listNode.setAttribute ('class','todo-item'); // Use className to set class attribute
+
+    const completeButton = document.createElement("button");
+    completeButton.innerText = 'Complete';
+    completeButton.setAttribute ('class','complete-btn'); // Use className to set class attribute
+
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = 'Delete';
+    deleteButton.setAttribute ("class" ,'trash-btn'); // Use className to set class attribute
+
+    divNode.appendChild(listNode);
+    divNode.appendChild(completeButton);
+    divNode.appendChild(deleteButton);
+  
+    const ulNode = document.getElementsByClassName("todo-list")[0];
+    ulNode.appendChild(divNode);
+
+    addCompleteFunction(  completeButton, listNode); // Pass listNode and completeButton
+    addDeleteFunction(deleteButton, divNode); // Pass divNode and deleteButton
+
+    // inputNode.value = ''; // Clear the input field
+}
+const addButton = document.getElementsByClassName('todo-button')[0]
+addButton.addEventListener('click', addTask)
+
+function addCompleteFunction( completeButton, listNode) {
+    completeButton.addEventListener('click', function () {
+        if (listNode.style['text-decoration'] !== '') {
+            listNode.style['text-decoration'] = ''
+        } else {
+            listNode.style['text-decoration'] = 'line-through solid rgb(0, 0, 0)';
+        }
+    })
+}
+
+function addDeleteFunction(deleteButton, divNode) {
+    deleteButton.addEventListener('click', function () {
+        divNode.remove();
+    })
+}
    
 </script>
