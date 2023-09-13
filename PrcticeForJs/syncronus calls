@@ -1,0 +1,21 @@
+//'Synchronous calls in programming refer to a situation where one operation or function call must complete before another operation or function call can begin. In other words, synchronous code is executed sequentially, one step at a time, with each step waiting for the previous one to finish.'
+
+
+function step1() {
+    console.log("Step 1: Starting");
+    // Simulate some time-consuming operation
+    for (let i = 0; i < 100000000; i++) {}
+    console.log("Step 1: Completed");
+}
+
+function step2() {
+    console.log("Step 2: Starting");
+    // Simulate another time-consuming operation
+    for (let i = 0; i < 100000000; i++) {}
+    console.log("Step 2: Completed");
+}
+
+console.log("Main Program: Start");
+step1();
+step2();
+console.log("Main Program: End");

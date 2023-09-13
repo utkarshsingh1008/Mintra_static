@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+   .container {
+    max-width: 400px;
+    margin: 50px auto;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #text {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+  }
+  </style>
+  <div class="container">
+    <h1>Text Size Changer</h1>
+    
+    <p id="text">This is some sample text.</p>
+
+    <button id="increaseBtn">+</button>
+    <button id="decreaseBtn">-</button>
+
+  </div>
+<script>
+const para = document.getElementById('text');
+    const defaultTextSize = 18
+    const incrButton = document.getElementById('increaseBtn')
+    const decrButton = document.getElementById('decreaseBtn')
+    
+    incrButton.addEventListener('click', function(){
+        let textSize = findTextSize();
+        para.style['font-size'] = (textSize + 2) +'px';
+    })
+    decrButton.addEventListener('click' , function(){
+       let textSize = findTextSize();
+        para.style['font-size'] = (textSize - 2) +'px';  
+    })
+    
+    function findTextSize(){
+       const fontSize = para.style['font-size']
+       if(fontSize){
+           return Number(fontSize.replace('px', ''))
+    
+       }else {
+           return defaultTextSize
+       }
+    }
+    </script>
+</body>
+</html>

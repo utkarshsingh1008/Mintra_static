@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Bollywood Word Guessing Game</title>
+    <style>
+      .word {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+      }
+      .letter {
+        display: inline-block;
+        width: 30px;
+        height: 40px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 30px;
+        margin-right: 5px;
+      }
+      .chances {
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bollywood Word Guessing Game</h1>
+    <div class="word">
+      <div class="letter"></div>
+      <div class="letter"></div>
+      <div class="letter"></div>
+      <div class="letter"></div>
+      <div class="letter"></div>
+    </div>
+
+    <div class="chances" id="guesses">Chances Left : 5</div>
+
+    <h3 id="answer"></h3>
+    <script>
+     const actualWord = "actor"
+const letterNodes = document.getElementsByClassName('letter')
+// letterNodes is an object with numerical values as the key
+let currentPosition = 0
+let guesses = 5
+
+document.body.addEventListener('keydown', function (event) {
+    const currentLetter = event.key
+    if (actualWord[currentPosition] === currentLetter) {
+        letterNodes[currentPosition].innerText = currentLetter
+        currentPosition += 1
+        if (currentPosition === 5) {
+            alert("Congratulations!")
+        }
+    } else {
+        guesses -= 1
+        document.getElementById('guesses').innerText = `Chances Left : ${guesses}`
+        if (guesses === 0) {
+            alert("You've run out of guesses! Game over!")
+            document.getElementById('answer').innerText = `Answer is ${actualWord}`
+        } else {
+            alert(`Wrong guess! ${guesses} guesses remaining.`)
+        }
+
+    }
+})
+    </script>
+  </body>
+</html>
