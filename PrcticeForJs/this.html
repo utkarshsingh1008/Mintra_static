@@ -1,0 +1,16 @@
+console.log(this);
+
+const obj={
+
+fullName:"akash",
+
+getDetails:function(){
+
+console.log(this)
+
+}
+
+}
+
+this = obj(Akash);
+<!-- it will point to object calling event listener -->

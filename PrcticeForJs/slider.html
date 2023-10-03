@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+    }
+    
+    .font-resizer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    } </style>
+</head>
+<body>
+    
+
+
+
+    <div class="font-resizer">
+        <label for="sizeSlider">Adjust font size:</label>
+        <input type="range" id="sizeSlider" min="10" max="72" value="16">
+        <span id="currentSize">Current Size: 16px</span>
+    </div>
+    <div id="textContent">
+        <p>Adjust the slider to see this text change in size!</p>
+    </div>
+
+
+<script>const textContent = document.getElementById('textContent');
+    const sizeSlider = document.getElementById('sizeSlider');
+    
+    sizeSlider.addEventListener('input', function(){
+        const newValue = sizeSlider.value +'px';
+        textContent.style.fontSize = newValue;
+    })
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,24 @@
+<script>
+    let count1 = 0
+   const abc = setInterval(function(){
+     count1++;
+        console.log(count1)
+    },2000);
+    setTimeout(function(){
+        clearTimeout(abc)
+        console.log("interval stopped at 5th sec")
+    },5000)
+    let count = 0
+        const timer1 = setInterval(function() {
+            count ++;
+            console.log(count)
+        },2000)
+
+    
+        setTimeout(function() {
+        
+            clearInterval(timer1)
+            console.log("interval stopped at 5th sec")
+        }, 5000)
+  
+</script>

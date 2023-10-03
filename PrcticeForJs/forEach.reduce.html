@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    const array = [1, 2, 3];
+
+// internal implementation of reduce
+const initialValue = 0;
+function callback(returnValue, actualValue, index, array) {
+  console.log(returnValue, actualValue, index, array);
+  return returnValue + actualValue;
+}
+
+let returnedValue = initialValue;
+for (let i = 0; i < array.length; i++) {
+  actualValue = array[i];
+  returnedValue = callback(returnedValue, actualValue, i, array);
+}
+console.log(returnedValue);
+
+
+const arr = [1,2,3]
+let initialValue1 = 0;
+function reduce1(returnedValue1, actualValue1, j, arr){
+console.log(returnedValue1, actualValue1, j, arr);
+   return returnedValue1 +actualValue1
+
+}
+let returnedValue1 = initialValue1
+for(let j = 0; j < arr.length; j++){
+  actualValue1 = arr[j];
+    returnedValue1 =  reduce1(returnedValue1, actualValue1, j, arr);
+}
+  console.log(returnedValue1);
+    </script>
+  </body>
+</html>

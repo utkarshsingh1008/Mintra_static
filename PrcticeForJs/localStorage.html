@@ -1,0 +1,25 @@
+<input id="todo-input">
+<button id="add-todo" >Add todo</button>
+<ul id="todo-holder">
+ </ul>
+
+ <script>
+    document.getElementById("add-todo").addEventListener('click',add);
+    let arrayList = JSON.parse(localStorage.getItem("list")) ? JSON.parse(localStorage.getItem("list")) : [];
+    function add(){
+        const element = document.getElementById("todo-input").value;
+        const main = document.getElementById("todo-holder");
+        main.innerHTML+=`<li>${element}</li>`;
+        arrayList.push(element);
+        localStorage.setItem("list",JSON.stringify(arrayList));
+    }
+
+    function initialLoad(){
+      
+        const main = document.getElementById("todo-holder");
+        for(let obj of arrayList){
+            main.innerHTML+=`<li>${obj}</li>`;
+        }
+    }
+    initialLoad();
+ </script>

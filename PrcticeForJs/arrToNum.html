@@ -1,0 +1,10 @@
+<!-- arr['1','2','3'] to arr[1,2,3] -->
+
+let stringOfNumber = "33,44,55,66,33";
+let numberArray=[];
+let arr = stringOfNumber.split(",");
+console.log(arr);
+for(let obj of arr){
+     numberArray.push(Number(obj));
+}
+console.log(numberArray);
