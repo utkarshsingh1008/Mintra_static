@@ -62,3 +62,88 @@ function calculate(logic, a, b){
 // dom manipulation 
 document.getElementById("Utkarsh")
 </script>
+
+<!-- 
+// delete property -->
+
+obj.age
+
+
+[]
+
+
+<script>
+
+let obj={
+
+fullName:"akash",
+
+age:22,
+
+getFullName:function(){
+
+return this.fullName;
+
+}
+
+}
+
+// delete obj.age;
+
+// delete obj.getFullName;
+
+let input = 'age';
+
+delete obj[input];
+
+delete obj['getFullName'];
+
+console.log(obj);
+
+</script>
+
+<script>
+
+  let obj1 ={
+  
+  fullName:"akash",
+  
+  age:22,
+  
+  getFullName:function(){
+  
+  return this.fullName;
+  
+  },
+  
+  getDisplay:function(){
+  
+  console.log("display function")
+  
+  },
+  
+  getFlag:function(){
+  
+  console.log("flag function")
+  
+  },
+  
+  deleteDetails:function(input){
+  
+  delete this[input];
+  
+  // delete this.getDisplay;
+  
+  }
+  
+  }
+  
+  obj.deleteDetails("getDisplay");
+  
+  console.log(obj);
+  
+  </script>
+  
+  
+  
+  

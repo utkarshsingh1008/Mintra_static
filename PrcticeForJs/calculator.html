@@ -55,10 +55,10 @@
         
         function calculate() {
           if (currentOperator === '') return;
-        
+         
           const num1 = parseFloat(previousInput);
           const num2 = parseFloat(currentInput);
-        
+        console.log(num1)
           switch (currentOperator) {
             case '+':
               currentInput = num1 + num2;

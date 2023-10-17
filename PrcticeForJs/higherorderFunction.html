@@ -1,0 +1,70 @@
+<script>
+    let getSevent = function(){
+        return 7;
+    }
+    function useFunction(a){
+        return a();
+    }
+    console.log(useFunction(getSevent))
+    function returnfun(){
+        return getSevent;
+    }
+    const exFun = returnfun();
+    console.log(exFun());
+
+    function sum(x,y){
+        return x+y;
+    }
+     console.log(sum(4, 5)) ;
+
+     function calculaterFun(fn, x, y){
+    return fn(x,y);
+     }
+
+     console.log(calculaterFun(sum, 5, 55));
+
+     function deliveryProduct(name, delevery){
+    console.log("delever this product");
+    delevery();
+     }
+
+     function sign(){
+        console.log("got signature");
+     }
+
+     deliveryProduct('MackBook', sign);
+    //  // callback hell
+        
+    //  getProduct(10,(product) =>{
+    //     getUserInfo(product.userId,(userInfo) =>{
+    //         getAddress(userInfo.userName, (address) =>{
+    //             console.log(address);
+    //         })
+    //     })
+    //  })
+    function GpayScan(input,callback){
+        setTimeout(function(){
+            console.log("Gpay Scan",input);
+            callback();
+        },3000)
+
+    }
+
+    function checkingMyBankBalance(){
+        setTimeout(function(){
+            console.log("Existing Balance");
+        },1000)
+
+    }
+
+    function sendingAmountToSenderBank(input){
+        setTimeout(function(){
+            console.log("Final amount",input);
+        },2000)   
+    }
+
+
+    GpayScan(300,()=>{
+        checkingMyBankBalance();
+    });
+</script>

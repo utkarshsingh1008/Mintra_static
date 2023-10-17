@@ -1,0 +1,29 @@
+<script>
+   function addition() {
+    return new Promise((resolve) => {
+        resolve("akash");
+    });
+}
+
+addition().then((result) => {
+    console.log(result);
+});
+
+const myPromice = new Promise((resolve, reject) =>{
+    setTimeout(()=>{
+        const success = true;
+        if(success){
+            resolve("Operation Success")
+        } else{
+            reject("Opration is not successfull")
+        }
+    },3000)
+})
+
+myPromice.then((result)=>{
+    console.log("fulfil", result);
+})
+.catch((error)=>{
+    console.log("Reject", error)
+})
+</script>
