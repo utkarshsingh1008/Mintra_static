@@ -1,0 +1,72 @@
+<script>
+     const myArray = [1, 5 , 6, 5, 6];
+     const price =[];
+     myArray.forEach((item)=>{
+        console.log(item)
+        price.push(item*5);
+     })
+   
+    console.log(price)
+
+
+//map
+const myArray2 = [5, 6 ,4 ,5 ,6];
+const newPrice = myArray.map((item)=>{
+    return item*5;
+})
+console.log(newPrice);
+const arrayOfString = ['4','6','6','9','99']
+const numArray = arrayOfString.map((item, idx)=>{
+return Number(item) ;
+})
+console.log(numArray);
+//filter
+const priceOnFlipcart = [22,66,44,55,99,44]
+const newPriceOnFlipcart = priceOnFlipcart.filter((item, idx)=>{
+    if(item < 50){
+       return true;
+
+    }
+return false;
+
+});
+console.log(newPriceOnFlipcart);
+
+var cources = ['js', 'c++', 'java', 'python'];
+const newCources = cources.filter((item)=>{
+    if(item.length < 5){
+        return true;
+    }
+    return false;
+})
+console.log(newCources);
+
+//reduce
+const utkarsh = [5,45,66,545];
+const utkarshNew = utkarsh.reduce((acc,index,idx)=>{
+    acc = acc + index;
+    return acc;
+},0)
+console.log(utkarshNew);
+
+const utkarshji = [5,45,66,545];
+const utkarshsingh = utkarshji.every((item)=>{
+  return typeof(item) === 'number';
+})
+console.log(utkarshsingh);
+ const shivam = [5,45,66,545];
+ const shivamNew = shivam.find((item)=>{
+    return item == '6';
+ })
+ console.log(shivamNew);
+ const shivamOld = shivam.sort((a,b)=>{
+    console.log(a,b);
+    if(a < b){
+        return 1;
+    } if(a > b){
+        return -1;
+    }
+    return 0;
+ })
+console.log(shivamOld);
+</script>

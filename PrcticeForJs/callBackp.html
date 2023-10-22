@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="getDataButton">Get Data</button>
+    <p id="output">Click the button to get data...</p>
+  </body>
+</html>
+<script>
+
+
+    function GpayScan(amount,callback){
+        setTimeout(function(){
+            console.log("Gpay Scan",amount);
+            callback(amount);
+        },3000)
+       
+    }
+
+    
+
+   
+
+   
+//     GpayScan(300,(amount)=>{
+//         setTimeout(function(){
+//             //true or false realtime data
+//             let balance = 3000;
+//             if(balance-amount>0){
+//                 console.log("Existing Balance is available to proceed");
+//             }
+//             else{
+//                 console.log("amount is not available");
+//             }    
+//         },1000)
+//     });
+    
+    
+//     function getData() {
+//   return new Promise((resolve)=>{
+//     setTimeout(()=>{
+//       resolve(`Data received!`);
+//     },2000)
+//   });
+// }
+
+document.getElementById('getDataButton').addEventListener('click', () => {
+  getData().then(data => {
+    document.getElementById('output').textContent = data;
+  });
+});
+</script>

@@ -1,0 +1,53 @@
+<script>
+
+// const xmlwriter = new XMLHttpRequest();
+
+// xmlwriter.onload = function () {
+
+// console.log("Success", this.responseText)
+
+// }
+
+// xmlwriter.open('GET', "https://mocki.io/v1/4494b70a-cabf-45a9-bdef-1400f77979fa");
+
+// xmlwriter.send()
+
+
+const xmlWriter = new XMLHttpRequest();
+xmlWriter.onload = function(){
+    console.log(this.responseText);
+}
+xmlWriter.open('GET', "https://api.github.com/users/defunkt/received_events");
+xmlWriter.send();
+fetch("https://mocki.io/v1/4494b70a-cabf-45a9-bdef-1400f77979fa")
+  .then(response => {
+    // Handle the response, e.g., parse JSON or check for errors
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Assuming the response is in JSON format
+  })
+  .then(data => {
+    // Do something with the data
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle errors, e.g., network errors or errors during processing
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+
+fetch(url)
+.then(response =>{
+    if(!response.ok){
+        throw new Error("network responce was not ok");
+    }
+    return response.json();
+})
+.then(data =>{
+  console.log(data);
+})
+.Catch(error =>{
+  console.log("there was a problem in fetch opration is not ok", error)
+});
+</script>
